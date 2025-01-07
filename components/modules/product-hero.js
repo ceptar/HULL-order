@@ -68,6 +68,8 @@ const ProductHero = ({ product, activeVariant, onVariantChange }) => {
           <ProductActions
             activeVariant={activeVariant}
             klaviyoAccountID={product.klaviyoAccountID}
+            product={product} 
+            productAddPhotos={product.photos.main}
           />
         </div>
       </div>

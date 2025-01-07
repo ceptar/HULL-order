@@ -1,0 +1,8 @@
+  @font-face {
+    font-family: syneVar;
+    src: url("/fonts/syneVar.woff2");
+    format: ("woff2");
+    font-weight: 300;
+    font-display: swap;
+  }
+ 

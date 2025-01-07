@@ -63,7 +63,7 @@
   }
 
   &--content {
-    @apply grid grid-cols-2 relative px-32 pt-4 pb-48;
+    @apply grid grid-cols-2 relative px-32 py-36;
     will-change: transform;
   }
 

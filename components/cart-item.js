@@ -1,8 +1,6 @@
 import React from 'react'
 import Link from 'next/link'
 
-import { hasObject } from '@lib/helpers'
-
 import { useUpdateItem, useRemoveItem, useToggleCart } from '@lib/context'
 
 import Photo from '@components/photo'
@@ -17,36 +15,34 @@ function CartItem({ item }) {
     updateItem(item.lineID, quantity)
   }
 
-  const defaultPhoto = item.photos.cart?.find((set) => !set.forOption)
-  const variantPhoto = item.photos.cart?.find((set) => {
-    const option = set.forOption
-      ? {
-          name: set.forOption.split(':')[0],
-          value: set.forOption.split(':')[1],
-        }
-      : {}
-    return option.value && hasObject(item.options, option)
-  })
+  // const defaultPhoto = item.photo?.find((set) => !set.forOption)
+  // const variantPhoto = item.photo?.find((set) => {
+  //   const option = set.forOption
+  //     ? {
+  //         name: set.forOption.split(':')[0],
+  //         value: set.forOption.split(':')[1],
+  //       }
+  //     : {}
+  //   return option.value && hasObject(item.options, option)
+  // })
 
-  const photos = variantPhoto ? variantPhoto : defaultPhoto
+  // const photos = variantPhoto ? variantPhoto : defaultPhoto
 
   return (
     <div className="cart-item">
-      {photos && (
         <Photo
-          photo={photos?.default}
+          photo={item.photo}
           srcSizes={[400]}
           sizes="(min-width: 768px) 400px, 35vw'"
           className="cart-item--photo"
         />
-      )}
       <div className="cart-item--details">
         <div className="cart-item--header">
           <div className="cart-item--title">
             <div className="cart-item--variant">{item.title}</div>
             <h2 className="cart-item--name">
               <Link
-                href={`/products/${item.product.slug}?variant=${item.id}`}
+                href={`/products/${item.product.slug}?variant=${item.product.id}`}
                 scroll={false}
               >
                 <a
@@ -63,8 +59,8 @@ function CartItem({ item }) {
         <div className="cart-item--tools">
           <div className="cart-item--quantity">
             <ProductCounter
-              key={item.id}
-              id={item.id}
+              key={item.lineID}
+              id={item.lineID}
               defaultCount={item.quantity}
               onUpdate={changeQuantity}
               className="is-small is-inverted"

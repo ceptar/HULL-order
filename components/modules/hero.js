@@ -33,19 +33,21 @@ const Hero = ({ data = {} }) => {
           {photos?.desktopPhoto && (
             <Photo
               photo={photos.desktopPhoto}
-              width={1600}
-              srcSizes={[800, 1000, 1200, 1600]}
+              width={3900}
+              srcSizes={[2400, 2800, 3200, 3900]}
               sizes="100vw"
               layout="fill"
+              quality={95}
               className="hero--bg is-desktop"
             />
           )}
           {photos?.mobilePhoto && (
             <Photo
               photo={photos.mobilePhoto}
-              width={800}
+              width={2400}
               sizes="100vw"
               layout="fill"
+              quality={95}
               className="hero--bg is-mobile"
             />
           )}

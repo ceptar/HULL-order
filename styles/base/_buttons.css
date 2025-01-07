@@ -40,7 +40,7 @@
 
   /* large sized button */
   &.is-large {
-    @apply text-24 leading-125 font-normal px-28;
+    @apply text-18 leading-125 font-normal px-28;
   }
 
   /* full width button */

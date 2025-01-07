@@ -2,7 +2,7 @@ import React, { useEffect, useMemo } from 'react'
 import Router from 'next/router'
 import { ThemeProvider } from 'next-themes'
 import { LazyMotion, domAnimation, AnimatePresence } from 'framer-motion'
-
+import '../styles/fonts.css'
 import '../styles/tailwind.css'
 import '../styles/app.css'
 
@@ -17,22 +17,12 @@ import {
 
 import Cart from '@components/cart'
 
-// Console Credits
-if (isBrowser) {
-  console.groupCollapsed(
-    '%c💀 Site Credits',
-    'display:block;padding:0.125em 1em;font-family:courier;font-size:14px;font-weight:bold;line-height:2;text-transform:uppercase;background:black;color:white;'
-  )
-  console.log(
-    '%cDesign by Nick DiMatteo \n– https://nickdimatteo.com',
-    'display:block;font-family:courier;font-size:12px;font-weight:bold;line-height:1;color:black;'
-  )
-  console.log(
-    '%cDevelopment by Nick DiMatteo \n– https://nickdimatteo.com',
-    'display:block;font-family:courier;font-size:12px;font-weight:bold;line-height:1;color:black;'
-  )
-  console.groupEnd()
-}
+import { loadStripe } from '@stripe/stripe-js';
+import { Elements } from '@stripe/react-stripe-js';
+
+const stripePromise = loadStripe('pk_live_51PHY56IqbXyMSGmjfiHNgFGqrsy8kOM5RkNvKY62adXSjIVv5zSlP7QHE0xWVdacGRZ32bnvCnmaKqPo17ojDHdN00drHeJ6Ac');
+
+
 
 const Site = ({ Component, pageProps, router }) => {
   const togglePageTransition = useTogglePageTransition()
@@ -111,7 +101,9 @@ const MyApp = ({ Component, pageProps, router }) => {
   return (
     <ThemeProvider enableSystem={false} disableTransitionOnChange>
       <SiteContextProvider data={{ ...data?.site }}>
+      <Elements stripe={stripePromise}>
         <Site Component={Component} pageProps={pageProps} router={router} />
+        </Elements>
       </SiteContextProvider>
     </ThemeProvider>
   )

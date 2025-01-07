@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useCallback } from 'react'
 import { useRouter } from 'next/router'
-import axios from 'axios'
 import useSWR from 'swr'
 
 import { getProduct, getAllDocSlugs } from '@data'
-
-import { useParams, usePrevious, centsToPrice, hasObject } from '@lib/helpers'
+import { centsToPrice } from '@lib/helpers'
+import { useParams, usePrevious, hasObject } from '@lib/helpers'
 
 import { useSiteContext } from '@lib/context'
 
@@ -13,19 +12,11 @@ import NotFoundPage from '@pages/404'
 import Layout from '@components/layout'
 import { Module } from '@components/modules'
 
-// setup our inventory fetcher
-const fetchInventory = (url, id) =>
-  axios
-    .get(url, {
-      params: {
-        id: id,
-      },
-    })
-    .then((res) => res.data)
-
 const Product = ({ data }) => {
   const router = useRouter()
   const { isPageTransition } = useSiteContext()
+
+  console.log('data', data)
 
   if (!router.isFallback && !data) {
     return <NotFoundPage statusCode={404} />
@@ -87,32 +78,6 @@ const Product = ({ data }) => {
     [activeParams]
   )
 
-  // check our product inventory is still correct
-  const { data: productInventory } = useSWR(
-    ['/api/shopify/product-inventory', page.product.id],
-    ([url, id]) => fetchInventory(url, id),
-    { errorRetryCount: 3 }
-  )
-
-  // rehydrate our product after inventory is fetched
-  useEffect(() => {
-    if (page.product && productInventory) {
-      setProduct({
-        ...page.product,
-        inStock: productInventory.inStock,
-        lowStock: productInventory.lowStock,
-        variants: [
-          ...page.product.variants.map((v) => {
-            const newInventory = productInventory.variants.find(
-              (nv) => nv.id === v.id
-            )
-            return newInventory ? { ...v, ...newInventory } : v
-          }),
-        ],
-      })
-    }
-  }, [page.product, productInventory])
-
   return (
     <>
       {!router.isFallback && (
@@ -161,7 +126,7 @@ function getProductSchema(product, activeVariantID, site) {
       availability: query.variant
         ? `http://schema.org/${variant.inStock ? 'InStock' : 'SoldOut'}`
         : `http://schema.org/${product.inStock ? 'InStock' : 'SoldOut'}`,
-      price: centsToPrice(query.variant ? variant.price : product.price),
+        price: centsToPrice(query.variant ? variant.price : product.price),
       priceCurrency: 'USD',
     },
     brand: {

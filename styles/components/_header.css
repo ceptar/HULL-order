@@ -18,7 +18,7 @@ a[href="#content"].skip-link {
   }
   
   &--inner {
-    @apply relative z-2 p-4 sm:p-16 bg-pageBG;
+    @apply relative z-2 p-2 sm:p-4 bg-pageBG;
 
     .is-overlay & {
       @apply bg-transparent transition-colors duration-300;
@@ -59,13 +59,13 @@ a[href="#content"].skip-link {
 }
 
 .logo {
-  @apply flex flex-col relative z-1;
+  @apply flex flex-col p-15 relative z-1;
 
   &--link {
-    @apply clean-btn block p-8 bg-transparent;
+    @apply clean-btn block bg-transparent;
 
     svg {
-      @apply block fill-current w-auto h-48;
+      @apply block fill-current w-auto  h-36 sm:h-48;
     }
   }
 }
@@ -210,7 +210,7 @@ a[href="#content"].skip-link {
       }
 
       &--inner {
-        @apply flex-1 flex flex-col overflow-y-scroll px-16 pb-16;
+        @apply flex-1 flex flex-col overflow-y-scroll px-15 py-36 mt-16;
         padding-top: calc(var(--headerHeight, 10rem) + 2.5rem);
       }
 
@@ -226,17 +226,17 @@ a[href="#content"].skip-link {
 
       &--primary {
         ul {
-          @apply flex flex-col;
+          @apply flex flex-col pb-32 text-28 ;
         }
 
         a,
         button {
-          @apply text-36 leading-150;
+          @apply leading-150 hover:opacity-70 ;
         }
       }
 
       &--secondary {
-        @apply pt-32;
+        @apply pt-32 border-t border-pageText;
 
         ul {
           @apply flex flex-col;
@@ -244,7 +244,7 @@ a[href="#content"].skip-link {
 
         a,
         button {
-          @apply text-20 leading-150;
+          @apply text-18 leading-120;
         }
       }
 

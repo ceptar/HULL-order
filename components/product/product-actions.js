@@ -1,3 +1,4 @@
+import { hasObject } from '@lib/helpers'
 import React, { useState } from 'react'
 
 import {
@@ -6,11 +7,24 @@ import {
   ProductWaitlist,
 } from '@components/product'
 
-const ProductActions = ({ activeVariant, klaviyoAccountID }) => {
+const ProductActions = ({ activeVariant, klaviyoAccountID, product, productAddPhotos }) => {
   // set default quantity
   const [quantity, setQuantity] = useState(1)
 
-  return (
+    const defaultPhoto = productAddPhotos?.find((set) => !set.forOption)
+    const variantPhoto = productAddPhotos?.find((set) => {
+      const option = set.forOption
+        ? {
+            name: set.forOption.split(':')[0],
+            value: set.forOption.split(':')[1],
+          }
+        : {}
+      return option.value && hasObject(activeVariant.options, option)
+    })
+  
+    const addPhotos = variantPhoto ? variantPhoto : defaultPhoto
+
+    return (
     <div className="product--actions">
       {activeVariant?.inStock ? (
         <>
@@ -22,7 +36,12 @@ const ProductActions = ({ activeVariant, klaviyoAccountID }) => {
           <ProductAdd
             productID={activeVariant.id}
             quantity={quantity}
+            price={activeVariant.price}
             className="btn is-primary is-large is-block"
+            productTitle={product.title}
+            productSlug={product.slug}
+            options={activeVariant.options}
+            photo={addPhotos.photos[0]}
           >
             Add To Cart
           </ProductAdd>
@@ -44,5 +63,4 @@ const ProductActions = ({ activeVariant, klaviyoAccountID }) => {
     </div>
   )
 }
-
 export default ProductActions

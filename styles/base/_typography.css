@@ -18,7 +18,7 @@
   }
 
   p {
-    @apply m-0 text-16 leading-150;
+    @apply m-0 text-14 leading-150;
   }
 
   strong {
@@ -32,12 +32,12 @@
   /* Headlines */
   h1,
   .is-h1 {
-    @apply m-0 text-48 font-normal leading-125;
+    @apply m-0 text-40 font-normal leading-125;
   }
 
   h2,
   .is-h2 {
-    @apply m-0 text-36 font-normal leading-125;
+    @apply mt-0 text-24 uppercase font-normal leading-160;
   }
 
   h3,
@@ -82,6 +82,9 @@
   }
   ::selection {
     @apply bg-pageText text-pageBG;
+  }
+  :root {
+    --radius: 0.5rem;
   }
 }
 
@@ -156,7 +159,7 @@ h1,
   .hero & {
     font-size: clamp(
       4rem,
-      calc(1.5rem + 3.5vw),
+      calc(2rem + 5vw),
       15rem
     )
   }

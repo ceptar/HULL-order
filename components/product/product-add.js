@@ -3,19 +3,10 @@ import cx from 'classnames'
 
 import { useSiteContext, useAddItem } from '@lib/context'
 
-const ProductAdd = ({ productID, quantity = 1, className, children }) => {
+const ProductAdd = ({ productID, quantity = 1, price, className, children, productTitle, productSlug, options, photo }) => {
   const addItemToCart = useAddItem()
-  const { shopifyClient, isLoading, isAdding } = useSiteContext()
-
-  // Check that Shopify is connected
-  if (!shopifyClient) {
-    return (
-      <span className={cx('is-disabled', className)} disabled>
-        Unavailable
-      </span>
-    )
-  }
-
+  const { isLoading, isAdding } = useSiteContext()
+console.log('photo', photo)
   return (
     <>
       {isLoading ? (
@@ -25,7 +16,7 @@ const ProductAdd = ({ productID, quantity = 1, className, children }) => {
       ) : (
         <button
           className={cx(className, { 'is-disabled': isAdding })}
-          onClick={() => addItemToCart(productID, quantity)}
+          onClick={() => addItemToCart(productID, quantity, price, productTitle, productSlug, options, photo)}
         >
           {isAdding ? 'Adding...' : <>{children ? children : 'Add to Cart'}</>}
         </button>
