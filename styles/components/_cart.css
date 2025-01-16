@@ -32,7 +32,7 @@
   }
 
   &--header {
-    @apply flex items-center relative px-16 py-12 sm:px-32 sm:py-24 text-14 leading-150 font-semibold uppercase;
+    @apply flex items-center relative px-32 py-16 text-14 leading-150 font-semibold uppercase;
 
     &::after {
       @apply absolute inset-x-0 bottom-0 border-t;
@@ -41,7 +41,7 @@
   }
 
   &--title {
-    @apply flex items-center h-48 mr-auto;
+    @apply flex items-center py-16 mr-auto;
   }
 
   &--count {
@@ -49,19 +49,23 @@
   }
 
   &--content {
-    @apply flex-1 flex flex-col overflow-y-scroll p-16 sm:p-32;
+    @apply flex-1 flex flex-col overflow-y-auto;
   }
 
   &--footer {
-    @apply relative px-16 pb-16 sm:px-32 sm:pb-32;
+    @apply relative;
   }
 
   &--subtotal {
-    @apply flex justify-between px-16 py-16 sm:py-32 border-t;
+    @apply flex justify-between px-32 py-32 border-y;
 
     span {
       @apply text-16 font-semibold;
     }
+  }
+
+  &--checkoutform {
+    @apply py-32 px-16;
   }
 
   &--message {
@@ -74,7 +78,7 @@
 }
 
 .cart-item {
-  @apply flex relative;
+  @apply flex relative py-16 px-32;
 
   &:not(:last-child) {
     @apply mb-32 pb-32 border-b;

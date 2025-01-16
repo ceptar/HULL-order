@@ -140,7 +140,7 @@
   }
 
   &--title {
-    @apply m-0 !important;
+    @apply m-0 pt-16 !important;
 
     .is-featured & {
       @apply text-16 font-semibold;
@@ -151,7 +151,7 @@
     }
 
     + .price {
-      @apply mt-8;
+      @apply mt-4 text-16;
     }
   }
 

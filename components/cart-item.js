@@ -49,7 +49,7 @@ function CartItem({ item }) {
                   onClick={() => toggleCart(false)}
                   className="cart-item--link"
                 >
-                  {item.product.title}
+                  {item.subTitle}
                 </a>
               </Link>
             </h2>

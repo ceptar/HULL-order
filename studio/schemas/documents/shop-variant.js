@@ -5,7 +5,7 @@ export default {
   name: 'productVariant',
   title: 'Variant',
   type: 'document',
-  __experimental_actions: ['update', 'publish', 'delete'],
+  // __experimental_actions: ['update', 'publish', 'delete'],
   groups: [
     { title: 'Content', name: 'content', default: true },
     { title: 'Settings', name: 'settings' },
@@ -48,7 +48,7 @@ export default {
       name: 'productTitle',
       title: 'Product Title',
       type: 'string',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -56,7 +56,7 @@ export default {
       name: 'variantTitle',
       title: 'Variant Title',
       type: 'string',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -64,7 +64,7 @@ export default {
       name: 'productID',
       title: 'Product ID',
       type: 'number',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -72,7 +72,7 @@ export default {
       name: 'variantID',
       title: 'Variant ID',
       type: 'number',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -80,7 +80,7 @@ export default {
       name: 'price',
       title: 'Price (cents)',
       type: 'number',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -88,7 +88,7 @@ export default {
       name: 'comparePrice',
       title: 'Compare Price (cents)',
       type: 'number',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -96,7 +96,7 @@ export default {
       name: 'inStock',
       title: 'In Stock?',
       type: 'boolean',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -104,7 +104,7 @@ export default {
       name: 'lowStock',
       title: 'Low Stock?',
       type: 'boolean',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -112,7 +112,7 @@ export default {
       name: 'sku',
       title: 'SKU',
       type: 'string',
-      readOnly: true,
+      // readOnly: true,
       fieldset: '2up',
       group: 'shopify'
     },
@@ -121,14 +121,14 @@ export default {
       name: 'options',
       type: 'array',
       of: [{ type: 'productOptionValue' }],
-      readOnly: true,
+      // readOnly: true,
       group: 'shopify'
     },
     {
       title: 'Draft Mode',
       name: 'isDraft',
       type: 'boolean',
-      readOnly: true,
+      // readOnly: true,
       hidden: true,
       fieldset: '2up',
       group: 'shopify'
@@ -137,7 +137,7 @@ export default {
       name: 'wasDeleted',
       title: 'Deleted from Shopify?',
       type: 'boolean',
-      readOnly: true,
+      // readOnly: true,
       hidden: true,
       fieldset: '2up',
       group: 'shopify'

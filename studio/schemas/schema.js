@@ -2,6 +2,7 @@ import createSchema from 'part:@sanity/base/schema-creator'
 import schemaTypes from 'all:part:@sanity/base/schema-type'
 
 // Document types
+import order from './documents/order';
 import page from './documents/page'
 import section from './documents/section'
 import product from './documents/shop-product'
@@ -70,6 +71,7 @@ export default createSchema({
   types: schemaTypes.concat([
     /* ----------------- */
     /* 1: Document types */
+    order,
     page,
     section,
     product,

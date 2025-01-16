@@ -211,7 +211,7 @@ const Collection = ({ data = {} }) => {
               }
               showOption={product.surfaceOption}
               showPrice
-              showQuickAdd
+              // showQuickAdd
             />
           ))}
 

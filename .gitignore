@@ -75,3 +75,6 @@ yarn.lock
 
 # dev
 todo.md
+
+pages/api/*
+pages/api/create-payment-intent.js

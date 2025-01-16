@@ -20,7 +20,7 @@
   }
 
   &--overlay {
-    @apply z-2 flex flex-col justify-center;
+    @apply z-2 flex flex-col justify-end;
     grid-area: 1/-1;
   }
 

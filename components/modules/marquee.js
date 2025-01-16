@@ -55,7 +55,7 @@ const Marquee = ({ data = {} }) => {
                       hasVisuals
                       showThumbs
                       showPrice
-                      showQuickAdd
+                      // showQuickAdd
                     />
                   </div>
                 )

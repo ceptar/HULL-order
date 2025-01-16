@@ -9,9 +9,9 @@ const Swatch = ({ label, color, children }) => {
       className="swatch"
       aria-label={label}
       style={{
-        '--swatchColor': color?.hex,
-        '--swatchBorder': color?.hex
-          ? contrastColor({ bgColor: color?.hex })
+        '--swatchColor': color,
+        '--swatchBorder': color
+          ? contrastColor({ bgColor: color })
           : null,
       }}
     >

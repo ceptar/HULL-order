@@ -99,10 +99,13 @@ export const product = `
       position,
       values[]
     },
-    optionSettings[]{
-      forOption,
-      "color": color->color,
-    },
+optionSettings[] {
+  forOption,
+  "colors": color[]->{
+    title,
+    "hex": color.hex
+  }
+},
     "variants": *[_type == "productVariant" && productID == ^.productID && wasDeleted != true && isDraft != true]{
       "id": variantID,
       title,

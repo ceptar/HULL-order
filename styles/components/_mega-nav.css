@@ -81,7 +81,11 @@
       @apply block absolute top-0 right-full w-10 text-12 uppercase tracking-widest font-semibold;
       
       span {
-        @apply block overflow-hidden absolute top-1/2 left-0 whitespace-nowrap rotate-90;
+        @apply block
+/*         
+        overflow-hidden 
+         */
+        absolute top-1/2 left-0 whitespace-nowrap rotate-90;
         transform-origin: 0 0;
       }
     }

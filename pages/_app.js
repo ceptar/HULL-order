@@ -101,7 +101,8 @@ const MyApp = ({ Component, pageProps, router }) => {
   return (
     <ThemeProvider enableSystem={false} disableTransitionOnChange>
       <SiteContextProvider data={{ ...data?.site }}>
-      <Elements stripe={stripePromise}>
+      <Elements stripe={stripePromise} 
+      >
         <Site Component={Component} pageProps={pageProps} router={router} />
         </Elements>
       </SiteContextProvider>

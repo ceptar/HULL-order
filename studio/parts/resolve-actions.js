@@ -51,7 +51,7 @@ const PreviewAction = (props) => {
     },
   }
 }
-
+/* 
 const ShopifyAction = ({ draft, published }) => {
   const [isSyncing, setIsSyncing] = useState(false)
 
@@ -110,7 +110,7 @@ const ShopifyAction = ({ draft, published }) => {
     },
   }
 }
-
+ */
 export default function resolveDocumentActions(props) {
   const isSingle = singletons.indexOf(props.type) > -1
   const canEditDelete = editAndDelete.indexOf(props.type) > -1
@@ -131,7 +131,7 @@ export default function resolveDocumentActions(props) {
       DiscardChangesAction,
       DeleteAction,
       ...(canPreview ? [PreviewAction] : []),
-      ...(isProduct ? [ShopifyAction] : []),
+      // ...(isProduct ? [ShopifyAction] : []),
     ]
   }
 
