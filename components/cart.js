@@ -67,51 +67,41 @@ const Cart = ({ data }) => {
 
   const appearance = {
     theme: 'night',
-    // labels: 'floating',
+    labels: 'floating',
     rules: {
       '.Tab': {
-        border: '1px solid #E0E6EB',
-        boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(18, 42, 66, 0.02)',
       },
 
       '.Tab:hover': {
-        color: 'var(--colorText)',
       },
 
       '.Tab--selected': {
-        borderColor: '#E0E6EB',
-        boxShadow: '0px 1px 1px rgba(0, 0, 0, 0.03), 0px 3px 6px rgba(18, 42, 66, 0.02), 0 0 0 2px var(--colorPrimary)',
+        backgroundColor: '#EA3680',
       },
-      '.Input': {
-        paddingTop: '12px',
-        paddingBottom: '12px',
+      '.Input--floating': {
+        paddingTop: '8px',
+        paddingBottom: '8px',
         paddingLeft: '16px',
         paddingRight: '16px',
       },
-      '.Label': {
-        color: '#e9e9e2e8',
-        paddingLeft: '16px',
-        fontSize: '14px',
+      '.Label--floating': {
+        color: '#CCCCC8',
+        paddingLeft: '0px',
+        fontSize: '12px',
       },
-      '.CheckboxLabel': {
-        color: '#e9e9e2e8',
-        fontSize: '14px',
+      '.Error': {
+        paddingLeft: '16px',
       },
     },
-    // fonts: [
-    //   {
-    //     cssSrc: 'https://discobabes.store/fonts.css?family=syneVar',
-    //   },
-    // ],
+
     variables: {
-    //  fontFamily: 'syneVar, sans-serif', // Ensure the font name matches the one in @font-face
       colorPrimary: '#000',
-      colorBackground: '#F4F4F0',
-      colorText: '#000',
-      colorDanger: '#F4F4F0',
+      colorBackground: '#1F1F1F',
+      colorText: '#FFF',
+      colorDanger: '#EA3680',
       colorBorder: '#F4F4F0',
-      borderRadius: '20px',
-      spacingUnit: '4px',
+      borderRadius: '24px',
+      spacingUnit: '0px',
     },
   }
 

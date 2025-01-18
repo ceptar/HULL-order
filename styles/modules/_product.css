@@ -83,6 +83,15 @@
   }
 
   &--swatch {
-    @apply clean-btn p-0 bg-transparent flex-row w-full gap-x-8;
+    @apply clean-btn p-3 bg-transparent flex-row gap-x-8;
   }
+
+}
+
+.is-group-color {
+  @apply clean-btn p-3 bg-transparent border rounded-full flex-row gap-x-8;
+}
+
+.is-group-color.is-active {
+  @apply bg-black;
 }

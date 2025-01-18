@@ -248,7 +248,10 @@ export const modules = `
           type,
           title,
           "slug": slug.current,
-          "color": color->color
+  "colors": color[]->{
+    title,
+    "hex": color.hex
+  }
         }
       }
     },

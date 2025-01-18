@@ -138,12 +138,14 @@ export default {
           }
         }
       ],
+/* 
       options: {
         editModal: 'popover'
       },
-      validation: Rule => Rule.unique(),
-      group: 'settings'
+      validation: Rule => R
+           */
     },
+
     {
       title: 'Gallery',
       name: 'galleryPhotos',

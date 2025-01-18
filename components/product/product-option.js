@@ -85,13 +85,17 @@ const ProductOption = ({
               key={key}
               title={`${option.name}: ${value}`}
               value={value}
-              className={cx({
+              className={cx(
+                `is-group-${option.name.toLowerCase().replace(' ', '-')}`, // Add dynamic is-optionName class
+                
+                {
                 btn: !colors.length,
                 'option--swatch': colors.length > 0,
                 'is-active': isActive,
                 'is-unavailable': !hasVariants,
                 'is-soldout': !inStock && hasVariants && !isActive,
-              })}
+              })
+            }
             >
 
               {/* Render color swatches or text depending on availability of colors */}

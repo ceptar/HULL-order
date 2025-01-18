@@ -85,7 +85,7 @@ export default function RadioItem({ title, value, colors, children, ...rest }) {
       {colors && colors.length > 0 ? (
 
         colors.map((color, idx) => (
-          <Swatch key={idx} label={title} color={color.hex} />
+          <Swatch key={idx} label={title} color={color} />
         ))
 
       ) : (

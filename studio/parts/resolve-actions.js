@@ -115,7 +115,7 @@ export default function resolveDocumentActions(props) {
   const isSingle = singletons.indexOf(props.type) > -1
   const canEditDelete = editAndDelete.indexOf(props.type) > -1
   const canPreview = previews.indexOf(props.type) > -1
-  const isProduct = props.type === 'product'
+  // const isProduct = props.type === 'product'
 
   if (isSingle) {
     return [

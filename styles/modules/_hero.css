@@ -25,7 +25,7 @@
   }
 
   &--content {
-    @apply w-full max-w-5xl mx-auto px-4 text-center text-white;
+    @apply w-full max-w-5xl mx-auto px-4 text-center text-pageBG;
     padding-top: calc(var(--headerHeight) + 2rem);
     padding-bottom: var(--headerHeight);
   }
