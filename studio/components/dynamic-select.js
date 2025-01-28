@@ -12,15 +12,6 @@ const DynamicSelect = React.forwardRef((props, ref) => {
 
   // are we joining from a subfield?
   if (options.joinWith) {
-    /*  ------------------------------------------------------------ */
-    /*  1. Map over the main array field (from)
-    /*  2. Map over the subfield (joinWith)
-    /*  3. build our array object
-    /*    - Use the main array field title (fromData -> title)
-    /*    - store that with the subfield value (joinWith), 
-    /*      or the subfield title and value (joinWith -> title)
-    /*  ------------------------------------------------------------ */
-
     // bail if we can't find the from field
     if (!(options.from in document)) return null
 
@@ -60,8 +51,8 @@ const DynamicSelect = React.forwardRef((props, ref) => {
 
     // map over the field to build our list of options
     dynamicOptions = document[options.from].map(opt => ({
-      title: opt[options.fromData.title].toString(),
-      value: opt[options.fromData.value].toString()
+      title: opt[options.fromData.title]?.toString() || '',
+      value: opt[options.fromData.value]?.toString() || ''
     }))
   }
 

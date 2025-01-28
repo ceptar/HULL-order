@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { PaperPlaneTilt } from 'phosphor-react'
 
 export default {

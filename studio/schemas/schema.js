@@ -6,10 +6,12 @@ import order from './documents/order';
 import page from './documents/page'
 import section from './documents/section'
 import product from './documents/shop-product'
-import productVariant from './documents/shop-variant'
+import productVariant from './objects/shop-variant'
 import collection from './documents/shop-collection'
 import filter from './documents/filter'
 import solidColor from './documents/color'
+import category from './documents/category';
+import shape from './documents/shape';
 
 import generalSettings from './documents/settings-general'
 import cookieSettings from './documents/settings-cookie'
@@ -79,6 +81,8 @@ export default createSchema({
     collection,
     filter,
     solidColor,
+    category,
+    shape,
 
     generalSettings,
     cookieSettings,

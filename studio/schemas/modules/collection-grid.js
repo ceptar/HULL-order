@@ -1,3 +1,4 @@
+import React from 'react'
 import { SquaresFour } from 'phosphor-react'
 
 export default {

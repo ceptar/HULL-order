@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { TextAlignLeft, Question } from 'phosphor-react'
 
 import { getTypeTitles } from '../../lib/helpers'

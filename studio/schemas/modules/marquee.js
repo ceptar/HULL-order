@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { Infinity } from 'phosphor-react'
 
 import customImage from '../../lib/custom-image'

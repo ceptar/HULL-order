@@ -1,3 +1,5 @@
+import React from 'react'
+
 import { ShoppingBag } from 'phosphor-react'
 
 export default {
